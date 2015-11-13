@@ -7,7 +7,11 @@
 | [nginx-test-examples.yml](./nginx-test-examples.yml) | A number of test fragments for the NGiNX entity |
 | [tomcat-test-examples.yml](./tomcat-test-examples.yml) | A number of test fragments for the TomcatServer entity |
 | [testhttpcall-examples.yml](./testhttpcall-examples.yml) | A number of test fragments showing usage of TestHttp entity |
-
+| [test-ifcondition-examples.yaml](./test-ifcondition-examples.yaml) | A number of test fragments showing usage of the IfCondition entity |
+| [test-ifelsecondition-examples.yaml](./test-ifelsecondition-examples.yaml) | A number of test fragments showing usage of IfElseCondition entity |
+| [test-loop-examples.yaml](./test-loop-examples.yaml) | A number of test fragments showing usage of the Loop entity |
+| [test-pause-examples.yaml](./test-pause-examples.yaml) | A number of test fragments showing usage of the Pause entity |
+| [test-runscript-examples.yaml](./test-runscript-examples.yaml) | A number of test fragments showing usage of the RunScript entity |
 
 ----
 Licensed to the Apache Software Foundation (ASF) under one

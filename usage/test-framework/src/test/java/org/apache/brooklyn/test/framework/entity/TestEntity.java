@@ -39,7 +39,10 @@ public interface TestEntity extends Entity, Startable {
     AttributeSensorAndConfigKey<String, String> COMPLEX_EFFECTOR_STRING = ConfigKeys.newSensorAndConfigKey(String.class, "complex-effector-string", "");
     AttributeSensorAndConfigKey<Boolean, Boolean> COMPLEX_EFFECTOR_BOOLEAN = ConfigKeys.newSensorAndConfigKey(Boolean.class, "complex-effector-boolean", "");
     AttributeSensorAndConfigKey<Long, Long> COMPLEX_EFFECTOR_LONG = ConfigKeys.newSensorAndConfigKey(Long.class, "complex-effector-long", "");
-
+    AttributeSensorAndConfigKey<Integer, Integer> START_COUNT = ConfigKeys.newSensorAndConfigKey(Integer.class, "start.count", "0");
+    AttributeSensorAndConfigKey<Integer, Integer> STOP_COUNT = ConfigKeys.newSensorAndConfigKey(Integer.class, "stop.count", "0");
+    AttributeSensorAndConfigKey<Integer, Integer> RESTART_COUNT = ConfigKeys.newSensorAndConfigKey(Integer.class, "restart.count", "0");
+    
     @Effector
     void simpleEffector();
 
@@ -47,6 +50,27 @@ public interface TestEntity extends Entity, Startable {
     TestPojo complexEffector(@EffectorParam(name = "stringValue") final String stringValue,
                              @EffectorParam(name = "booleanValue") final Boolean booleanValue,
                              @EffectorParam(name = "longValue") final Long longValue);
+    
+    /**
+     * Gets any test value that has been set into the entity during the test.
+     * 
+     * @return the test value
+     */
+    String getTestValue();
+
+    /**
+     * Sets a result into the entity for later verification.
+     * 
+     * @param result the result to set into the entity.
+     */
+    void setTestValue(String result);
+    
+    /**
+     * Tells the entity to throw an exception on restart.
+     * 
+     * @param doThrow whether to throw an Exception on restart
+     */
+    void setThrowOnRestart(boolean doThrow);
 
     class TestPojo {
         private final String stringValue;
